@@ -7,11 +7,13 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+from pathlib import Path
+
 @st.cache_data
 def load_data():
-    return pd.read_csv(
-        "../data/processed/clv_scoring_dataset.csv"
-    )
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    data_path = BASE_DIR / "data" / "processed" / "clv_scoring_dataset.csv"
+    return pd.read_csv(data_path)
 
 df = load_data()
 
