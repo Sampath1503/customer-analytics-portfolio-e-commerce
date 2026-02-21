@@ -1,11 +1,13 @@
 import pandas as pd
 import streamlit as st
 
+from pathlib import Path
+
 @st.cache_data
-def load_clv_data():
-    path = "../data/processed/clv_scoring_dataset.csv"
-    df = pd.read_csv(path)
-    return df
+def load_data():
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    data_path = BASE_DIR / "data" / "processed" / "clv_scoring_dataset.csv"
+    return pd.read_csv(data_path)
 
     # Basic safety
     required_cols = {
