@@ -157,6 +157,8 @@ A Streamlit app was built to make CLV insights accessible beyond BI tools.
 
 📁 `app/`
 
+Live app link: **https://customer-analytics-portfolio-e-commerce.streamlit.app/**
+
 ---
 
 ## 🗂 Project Structure
