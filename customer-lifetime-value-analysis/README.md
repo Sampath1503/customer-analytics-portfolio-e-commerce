@@ -118,6 +118,7 @@ An interactive Power BI dashboard was designed for business stakeholders.
 ### Dashboard Pages
 
 **Page 1 – CLV Overview**
+![CLV Overview](dashboards/screenshots/page1_clv_overview_high_(6m).png)
 
 * Total customers
 * Average CLV
@@ -125,6 +126,7 @@ An interactive Power BI dashboard was designed for business stakeholders.
 * CLV contribution by segment
 
 **Page 2 – High-Value Customer Analysis**
+![CLV Overview](dashboards/screenshots/page2_high_value_deep_dive_rfm.png)
 
 * Purchase frequency patterns
 * Recency behavior
@@ -132,6 +134,7 @@ An interactive Power BI dashboard was designed for business stakeholders.
 * Customer-level CLV table
 
 **Page 3 – Actionable Customers**
+![CLV Overview](dashboards/screenshots/page3_actionable_customers.png)
 
 * High-value customers requiring immediate action
 * Recency and predicted purchase filters
