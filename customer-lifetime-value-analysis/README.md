@@ -115,6 +115,16 @@ This enables:
 
 An interactive Power BI dashboard was designed for business stakeholders.
 
+## 📊 Power BI Dashboard
+
+### Page 1 – CLV Overview
+![CLV Overview](dashboards/screenshots/page1_clv_overview_high_(6m).png)
+
+### Page 2 – High Value Deep Dive
+![High Value Deep Dive](dashboards/screenshots/page2_high_value_deep_dive_rfm.png)
+
+### Page 3 – Actionable Customers
+![Actionable Customers](dashboards/screenshots/page3_actionable_customers.png)
 ### Dashboard Pages
 
 **Page 1 – CLV Overview**
