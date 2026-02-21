@@ -4,7 +4,7 @@ import streamlit as st
 from pathlib import Path
 
 @st.cache_data
-def load_data():
+def load_clv_data():
     BASE_DIR = Path(__file__).resolve().parent.parent
     data_path = BASE_DIR / "data" / "processed" / "clv_scoring_dataset.csv"
     return pd.read_csv(data_path)
