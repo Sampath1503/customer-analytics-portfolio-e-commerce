@@ -45,25 +45,46 @@ fig_contrib.update_layout(height=350)
 
 st.plotly_chart(fig_contrib, use_container_width=True)
 
+# ---------------- AVERAGE CLV BY SEGMENT (IMPROVED) ----------------
+
 avg_clv = (
     filtered_df
     .groupby("CLV Segment", as_index=False)["clv_6m"]
     .mean()
+    .sort_values("clv_6m", ascending=True)
 )
 
 fig_avg = px.bar(
     avg_clv,
-    x="CLV Segment",
-    y="clv_6m",
+    x="clv_6m",
+    y="CLV Segment",
+    orientation="h",
     text=avg_clv["clv_6m"].round(2),
-    title="Average CLV by Segment",
+    color="CLV Segment",
+    color_discrete_map={
+        "High Value": "#1f77b4",
+        "Medium Value": "#ff7f0e",
+        "Low Value": "#d62728"
+    },
+    title="Average Customer Lifetime Value by Segment",
     labels={"clv_6m": "Average CLV (₹)"}
 )
 
+fig_avg.update_layout(
+    xaxis_tickprefix="₹",
+    yaxis_title="CLV Segment",
+    showlegend=False,
+    height=350
+)
+
 fig_avg.update_traces(textposition="outside")
-fig_avg.update_layout(height=350)
 
 st.plotly_chart(fig_avg, use_container_width=True)
+
+st.caption(
+    "Insight: High-value customers generate several multiples of the average CLV compared to other segments, "
+    "justifying disproportionate retention and personalization investment."
+)
 
 # ---------------- CUSTOMER MIX BY CLV SEGMENT (%) ----------------
 
