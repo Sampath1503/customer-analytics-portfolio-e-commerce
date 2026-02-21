@@ -3,7 +3,7 @@ import streamlit as st
 
 @st.cache_data
 def load_clv_data():
-    path = "data/processed/clv_scoring_dataset.csv"
+    path = "../data/processed/clv_scoring_dataset.csv"
     df = pd.read_csv(path)
     return df
 

@@ -1,22 +1,27 @@
 import streamlit as st
+import pandas as pd
 
 st.set_page_config(
     page_title="Customer Lifetime Value Dashboard",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-st.sidebar.title("📊 Customer Analytics")
-st.sidebar.info(
-    "CLV modeling using BG/NBD + Gamma-Gamma\n\n"
-    "Built for business decision-making"
-)
+@st.cache_data
+def load_data():
+    return pd.read_csv(
+        "../data/processed/clv_scoring_dataset.csv"
+    )
 
-st.title("📈 Customer Lifetime Value Dashboard")
+df = load_data()
+
+st.title("📊 Customer Lifetime Value (CLV) Dashboard")
 st.markdown(
     """
-    Use the sidebar to navigate between:
-    - CLV Overview
-    - High-Value Customer Analysis
-    - Actionable Customers
+    This dashboard presents **6-month Customer Lifetime Value predictions**
+    using BG/NBD and Gamma-Gamma models to support
+    **retention, segmentation, and revenue optimization decisions**.
     """
 )
+
+st.markdown("### 👉 Use the left sidebar to navigate between sections.")
