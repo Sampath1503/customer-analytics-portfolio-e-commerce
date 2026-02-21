@@ -1,7 +1,4 @@
-
-
-
-```markdown
+---
 # 📊 Customer Analytics Portfolio – E-Commerce
 
 This repository demonstrates **production-style customer analytics** using real transactional data, combining **customer churn risk** and **customer lifetime value (CLV)** to support **retention decision-making**.
