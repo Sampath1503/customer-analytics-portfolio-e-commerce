@@ -65,22 +65,46 @@ fig_avg.update_layout(height=350)
 
 st.plotly_chart(fig_avg, use_container_width=True)
 
-count_df = (
+# ---------------- CUSTOMER MIX BY CLV SEGMENT (%) ----------------
+
+segment_counts = (
     filtered_df
     .groupby("CLV Segment", as_index=False)["CustomerID"]
     .nunique()
+    .rename(columns={"CustomerID": "Customers"})
 )
 
-fig_count = px.bar(
-    count_df,
-    x="CLV Segment",
-    y="CustomerID",
-    text="CustomerID",
-    title="Customer Distribution by CLV Segment",
-    labels={"CustomerID": "Number of Customers"}
+segment_counts["Percentage"] = (
+    segment_counts["Customers"] / segment_counts["Customers"].sum() * 100
+).round(2)
+
+fig_mix = px.bar(
+    segment_counts,
+    x="Percentage",
+    y="CLV Segment",
+    orientation="h",
+    text=segment_counts["Percentage"].astype(str) + "%",
+    color="CLV Segment",
+    color_discrete_map={
+        "High Value": "#1f77b4",
+        "Medium Value": "#ff7f0e",
+        "Low Value": "#d62728"
+    },
+    title="Customer Mix by CLV Segment (%)"
 )
 
-fig_count.update_traces(textposition="outside")
-fig_count.update_layout(height=350)
+fig_mix.update_layout(
+    xaxis_title="Percentage of Customers",
+    yaxis_title="CLV Segment",
+    showlegend=False,
+    height=350
+)
 
-st.plotly_chart(fig_count, use_container_width=True)
+fig_mix.update_traces(textposition="outside")
+
+st.plotly_chart(fig_mix, use_container_width=True)
+
+st.caption(
+    "Insight: A smaller proportion of high-value customers contributes a disproportionately large share "
+    "of total predicted CLV, indicating strong retention leverage."
+)
