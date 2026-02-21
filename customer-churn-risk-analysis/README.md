@@ -1,5 +1,3 @@
----
-
 # 📉 Customer Churn Risk Analysis – E-Commerce
 
 ## 🔍 Project Summary
