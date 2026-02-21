@@ -145,7 +145,7 @@ An interactive Power BI dashboard was built using the churn scoring dataset.
 * Behavioral comparisons across risk groups
 
 ### 🔹 Page 3 – High-Risk Customers
-![Actionable Customers](dashboard/screenshots/page3_higg_customers_customers.png)
+![Actionable Customers](dashboard/screenshots/page3_high_risk_customers.png)
 
 
 * List of high-risk customers
