@@ -1,211 +1,161 @@
 ---
-# 📉 Customer Churn Risk Analysis (E-Commerce)
 
-🔍 Project Overview
+# 📉 Customer Churn Risk Analysis – E-Commerce
 
-This project focuses on identifying customers at risk of churn using historical transaction data and customer behavior features.
-The goal is to help businesses prioritize retention efforts, reduce revenue loss, and target high-risk customers effectively.
+## 🔍 Project Summary
 
-The final output is a churn risk scoring dataset and an interactive Power BI dashboard designed for business stakeholders.
+This project identifies **customers at risk of churn** using historical e-commerce transaction data and behavioral signals.
 
+The objective is simple and business-driven:
+**help teams proactively retain customers, reduce revenue loss, and prioritize high-risk users.**
+
+The final deliverables include:
+
+* A **customer-level churn risk scoring dataset**
+* An **interactive Power BI dashboard** designed for business stakeholders
 
 ---
 
-🧠 Business Problem
+## 🧠 Business Context
 
-Customer churn directly impacts revenue and growth. Businesses need to answer:
+Customer churn directly impacts revenue, marketing efficiency, and long-term growth.
 
-Which customers are likely to churn?
+Business teams typically struggle to answer:
 
-What behavioral patterns indicate churn risk?
-
-Which customers should be prioritized for retention campaigns?
-
+* Which customers are likely to stop purchasing?
+* What behavioral patterns signal churn risk?
+* Who should be prioritized for retention campaigns?
 
 This project addresses these questions by combining:
 
-Behavioral feature engineering
-
-Predictive modeling
-
-Business-oriented dashboards
-
-
+* Behavioral feature engineering
+* Predictive churn modeling
+* Business-oriented visual analytics
 
 ---
 
-🗂 Dataset
+## 🗂 Dataset Overview
 
-Source: Online Retail transactional dataset
+**Source:** Online Retail Transactional Dataset
+**Time Period:** ~12 months
+**Granularity:** Transaction-level
+**Customers:** ~4,300 unique customers
 
-Granularity: Transaction-level
-Time period: ~12 months
-Customers: ~4,300 unique customers
+### Raw Fields
 
-Key Raw Fields
+* CustomerID
+* InvoiceDate
+* Quantity
+* UnitPrice
 
-CustomerID
+### Engineered Customer-Level Features
 
-InvoiceDate
-
-Quantity
-
-UnitPrice
-
-
-Engineered Customer-Level Features
-
-Frequency (number of purchases)
-
-Monetary value (total spend)
-
-Average basket value
-
-Recency (days since last purchase)
-
-Customer lifetime
-
-Purchase velocity
-
-Return ratio
-
-
+* Purchase frequency
+* Total monetary value
+* Average basket value
+* Recency (days since last purchase)
+* Customer lifetime
+* Purchase velocity
+* Return ratio
 
 ---
 
-🛠 Methodology
+## 🛠 Methodology
 
-1️⃣ Data Cleaning & Preparation
+### 1️⃣ Data Cleaning & Preparation
 
-Removed cancelled and invalid transactions
-
-Filtered non-positive quantities and prices
-
-Created revenue feature
-
-Aggregated transaction data to customer-level metrics
-
-
+* Removed cancelled and invalid invoices
+* Filtered non-positive quantities and prices
+* Created revenue features
+* Aggregated transactions to customer-level metrics
 
 ---
 
-2️⃣ Exploratory Data Analysis (EDA)
+### 2️⃣ Exploratory Data Analysis (EDA)
 
-Revenue concentration analysis
-
-Customer behavior distribution
-
-Identification of heavy vs light customers
-
-Churn vs active customer comparison
-
-
+* Revenue concentration and customer contribution analysis
+* Behavioral distribution of customers
+* Identification of heavy vs light buyers
+* Comparison of active vs churned customers
 
 ---
 
-3️⃣ Churn Label Definition
+### 3️⃣ Churn Label Definition
 
-Customers were labeled as churned if:
+Customers were labeled as **churned** if they made **no purchases in the last 90 days** of the observation window.
 
-They had no purchases in the last 90 days of the observation window
-
-
-This converts churn into a binary classification problem.
-
+This reframes churn as a **binary classification problem** aligned with business expectations.
 
 ---
 
-4️⃣ Feature Engineering
+### 4️⃣ Feature Engineering
 
 Key churn indicators engineered:
 
-Recency
+* Recency
+* Purchase velocity
+* Customer lifetime
+* Return behavior
+* Spending patterns
 
-Purchase velocity
+Special attention was paid to:
 
-Customer lifetime
-
-Return behavior
-
-Spending patterns
-
-
-Special care was taken to:
-
-Handle division-by-zero cases
-
-Remove data leakage
-
-Ensure model stability
-
-
+* Avoiding data leakage
+* Handling division-by-zero cases
+* Ensuring model stability and interpretability
 
 ---
 
-5️⃣ Modeling
+### 5️⃣ Modeling & Scoring
 
 Multiple models were evaluated.
-Logistic Regression was selected due to:
 
-Strong performance
+**Logistic Regression** was selected because it provides:
 
-High interpretability
+* Strong predictive performance
+* Clear interpretability
+* Business-friendly coefficients
 
-Business-friendly coefficients
+**Final Model Performance**
 
+* Accuracy: ~98%
+* ROC-AUC: ~0.99
 
-Model Performance (Final)
+Recency emerged as the **strongest churn predictor**.
 
-Accuracy: ~98%
-
-ROC-AUC: ~0.99
-
-Recency identified as the strongest churn signal
-
-
-The model was used to generate churn probabilities for all customers.
-
+The model outputs **churn probabilities** for every customer, enabling risk-based prioritization.
 
 ---
 
-📊 Dashboard (Power BI)
+## 📊 Power BI Dashboard
 
-An interactive Power BI dashboard was created using the churn scoring dataset.
+An interactive Power BI dashboard was built using the churn scoring dataset.
 
-🔹 Page 1 – Executive Overview
+### 🔹 Page 1 – Executive Overview
 
-Total customers
+* Total customers
+* Overall churn rate
+* Active vs churned split
+* High-level churn risk summary
 
-Churn rate
+### 🔹 Page 2 – Risk Distribution
 
-Active vs churned customers
+* Customer segmentation by churn risk (Low / Medium / High)
+* Behavioral comparisons across risk groups
 
-Overall churn risk summary
+### 🔹 Page 3 – High-Risk Customers
 
+* List of high-risk customers
+* Key behavioral indicators
+* Actionable targets for retention campaigns
 
-🔹 Page 2 – Risk Distribution
-
-Customer distribution by churn risk (Low / Medium / High)
-
-Behavioral comparisons across risk groups
-
-
-🔹 Page 3 – High-Risk Customers
-
-High-risk customer list
-
-Behavioral indicators
-
-Priority customers for retention actions
-
-
-📌 This dashboard is designed for decision-makers and marketing teams.
-
+📌 Designed specifically for **decision-makers and marketing teams**, not just analysts.
 
 ---
 
-🗂 Project Structure
+## 🗂 Project Structure
 
+```
 customer-churn-risk-analysis/
 │
 ├── dashboard/
@@ -231,61 +181,43 @@ customer-churn-risk-analysis/
 │   └── 04_modeling_scoring.ipynb
 │
 └── README.md
-
-
----
-
-🧪 Tech Stack
-
-Python
-
-Pandas, NumPy
-
-Scikit-learn
-
-Logistic Regression
-
-Power BI
-
-Matplotlib / Seaborn
-
-
+```
 
 ---
 
-📌 Key Insights
+## 🧪 Tech Stack
 
-Recency is the strongest churn predictor
-
-High spenders can still churn if inactive
-
-Churn risk is highly skewed toward a small customer segment
-
-Early identification enables targeted retention strategies
-
-
+* Python
+* Pandas, NumPy
+* Scikit-learn
+* Logistic Regression
+* Power BI
+* Matplotlib, Seaborn
 
 ---
 
-🔮 Future Enhancements
+## 📌 Key Business Insights
 
-Combine churn probability with CLV for revenue-at-risk analysis
-
-Test tree-based models with explainability (SHAP)
-
-Deploy churn scoring via Streamlit for wider accessibility
-
-Add campaign uplift modeling
-
-
+* **Recency is the strongest churn signal**
+* High-value customers can churn if engagement drops
+* Churn risk is concentrated in a small customer segment
+* Early detection enables targeted, cost-effective retention strategies
 
 ---
 
-👤 Author
+## 🔮 Future Improvements
 
-Chintu
-Aspiring Data Scientist | Customer Analytics | Churn & CLV Modeling
-
+* Combine churn probability with **Customer Lifetime Value (CLV)** to estimate revenue-at-risk
+* Evaluate tree-based models with explainability (SHAP)
+* Deploy churn scoring via **Streamlit**
+* Add **uplift modeling** to measure campaign effectiveness
 
 ---
 
+## 👤 Author
+
+**Sampath**
+Aspiring Data Scientist
+Customer Analytics | Churn & CLV Modeling
+
+---
