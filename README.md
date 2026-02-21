@@ -198,6 +198,3 @@ These projects are intentionally designed to answer one real business question:
 This mirrors how retention strategy is executed in real e-commerce organizations.
 
 ---
-```
-
----
