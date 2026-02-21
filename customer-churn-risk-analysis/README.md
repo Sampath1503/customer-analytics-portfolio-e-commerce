@@ -130,6 +130,7 @@ The model outputs **churn probabilities** for every customer, enabling risk-base
 An interactive Power BI dashboard was built using the churn scoring dataset.
 
 ### 🔹 Page 1 – Executive Overview
+![Actionable Customers](dashboards/screenshots/page1_executive_overview.png)
 
 * Total customers
 * Overall churn rate
@@ -137,11 +138,15 @@ An interactive Power BI dashboard was built using the churn scoring dataset.
 * High-level churn risk summary
 
 ### 🔹 Page 2 – Risk Distribution
+![Actionable Customers](dashboards/screenshots/page2_risk_distribution.png)
+
 
 * Customer segmentation by churn risk (Low / Medium / High)
 * Behavioral comparisons across risk groups
 
 ### 🔹 Page 3 – High-Risk Customers
+![Actionable Customers](dashboards/screenshots/page3_higg_customers_customers.png)
+
 
 * List of high-risk customers
 * Key behavioral indicators
