@@ -1,5 +1,3 @@
----
-
 # 📈 Customer Lifetime Value (CLV) Analysis & Prediction (E-Commerce)
 
 ## 📌 Project Overview
