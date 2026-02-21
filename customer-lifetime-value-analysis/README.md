@@ -215,5 +215,3 @@ customer-lifetime-value-analysis/
 * Public Streamlit deployment
 
 ---
-
-]
