@@ -31,6 +31,7 @@ This converts probabilistic churn predictions into **financial exposure estimate
 ## 📊 Executive Dashboard: Revenue at Risk
 
 A standalone Power BI dashboard was built to provide executive-level retention intelligence.
+![Executive View](dashboard/screenshots/executive_view.png)
 
 ### 🔹 KPI Overview
 
