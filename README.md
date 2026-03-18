@@ -69,7 +69,7 @@ Power BI dashboard including:
 * Executive churn overview
 * Risk distribution segmentation
 * High-risk customer drill-down
-
+![Actionable Customers](customer-churn-risk-analysis/dashboard/screenshots/page2_risk_distribution.png)
 ---
 
 ## 📌 Insight
@@ -77,7 +77,7 @@ Power BI dashboard including:
 Churn risk is concentrated within a limited customer subset, enabling targeted and cost-effective retention intervention.
 
 ---
-![Actionable Customers](customer-churn-risk-analysis/dashboard/screenshots/page2_risk_distribution.png)
+
 
 # 🟢 Project 2 — Customer Lifetime Value (6-Month CLV)
 
@@ -111,6 +111,7 @@ Forecast forward-looking customer revenue to prioritize high-impact accounts and
 * Power BI CLV dashboard
 * Customer segmentation (High / Medium / Low Value)
 * Deployed Streamlit web application
+![Actionable Customers](customer-lifetime-value-analysis/dashboard/screenshots/page2_high_value_deep_dive_rfm.png)
 
 ---
 
@@ -146,7 +147,7 @@ This transforms behavioral risk into measurable financial exposure.
 * CLV vs Churn Risk distribution
 * Revenue exposure by value tier
 * Top customers by financial risk
-
+![Actionable Customers](customer-retention-intelligence/dashboard/screenshots/executive_view.png)
 ---
 
 ## 📌 Strategic Insight
