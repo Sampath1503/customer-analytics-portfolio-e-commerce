@@ -1,217 +1,143 @@
-# 📊 Customer Analytics Portfolio – Revenue-Focused Retention Intelligence
+# 🚀 Customer Analytics System – Revenue-Focused Retention Intelligence
 
-This repository demonstrates an end-to-end **customer analytics system** for e-commerce, integrating:
+## 💡 Business Impact
 
-* **Customer Churn Risk Prediction**
-* **Customer Lifetime Value (CLV) Forecasting**
-* **Revenue-at-Risk Executive Prioritization**
+- ₹197K projected revenue at risk (~27.5% exposure)
+- ~33% of customers contribute ~88% of total revenue
+- High-value customers with churn risk identified for targeted retention
 
-The objective is not just prediction — but converting behavioral analytics into **financial decision-making**.
-
----
-
-# 🎯 Core Business Question
-
-> Which customers should we prioritize to protect future revenue?
-
-This portfolio answers that by combining **risk (churn probability)** and **value (6-month CLV)** into measurable revenue exposure.
+This system transforms customer behavior into **financial decision-making**, combining churn prediction, CLV forecasting, and revenue-at-risk modeling.
 
 ---
 
-# 🏗 Portfolio Architecture
+## 🎯 Core Business Question
 
-```
+Which customers should we prioritize to protect future revenue?
+
+This project answers that by combining:
+- **Risk (Churn Probability)**
+- **Value (6-Month CLV)**
+
+→ to quantify **revenue exposure and retention priority**
+
+---
+
+## 🏗 System Architecture
 customer-analytics-portfolio/
 │
-├── customer-churn-risk-analysis/        # ML-based churn prediction system
-├── customer-lifetime-value-analysis/    # Probabilistic CLV forecasting + Streamlit app
-├── customer-retention-intelligence/     # Integrated revenue-at-risk dashboard
+├── customer-churn-risk-analysis/
+├── customer-lifetime-value-analysis/
+├── customer-retention-intelligence/
 │
 ├── requirements.txt
 └── README.md
-```
+
 
 ---
 
-# 🔴 Project 1 — Customer Churn Risk Prediction
+## 🔴 Churn Risk Prediction
 
-## 🔍 Business Objective
+Identifies customers likely to disengage within a 90-day window.
 
-Identify customers likely to disengage within a 90-day inactivity window and prioritize retention actions.
+### Key Highlights
+- ~98% accuracy | ~87% recall on churn class
+- Risk segmentation: High / Medium / Low
+- Enables targeted retention instead of blanket campaigns
 
----
+### Output
+- Power BI dashboard with risk distribution and customer drill-down
 
-## 🧠 Methodology
+![Churn Risk](customer-churn-risk-analysis/dashboard/screenshots/page2_risk_distribution.png)
 
-* Transaction-level aggregation → customer-level dataset
-* RFM-style feature engineering
-* Behavioral signal extraction
-* Logistic Regression classifier
-* Class imbalance handling (SMOTE)
-* Recall-focused evaluation
-
----
-
-## 📈 Model Performance
-
-* Accuracy: ~98%
-* Recall (Churned Customers): ~87%
-* ROC-AUC: ~0.99
-
-> Recall was prioritized to minimize missed churners.
+### Insight
+Churn risk is concentrated within a small subset → enabling focused intervention.
 
 ---
 
-## 📊 Deliverables
+## 🟢 Customer Lifetime Value (6-Month CLV)
 
-Power BI dashboard including:
+Predicts future customer value using probabilistic modeling.
 
-* Executive churn overview
-* Risk distribution segmentation
-* High-risk customer drill-down
-![Actionable Customers](customer-churn-risk-analysis/dashboard/screenshots/page2_risk_distribution.png)
----
+### Key Highlights
+- ~33% customers contribute ~88% of revenue
+- High-value customers identified for prioritization
+- CLV driven by longevity and repeat purchase behavior
 
-## 📌 Insight
+### Output
+- CLV segmentation dashboard (High / Medium / Low value)
 
-Churn risk is concentrated within a limited customer subset, enabling targeted and cost-effective retention intervention.
+![CLV Analysis](customer-lifetime-value-analysis/dashboards/screenshots/page2_high_value_deep_dive_rfm.png)
 
----
-
-
-# 🟢 Project 2 — Customer Lifetime Value (6-Month CLV)
-
-## 🔍 Business Objective
-
-Forecast forward-looking customer revenue to prioritize high-impact accounts and optimize marketing allocation.
+### Insight
+Revenue is highly concentrated → retention should focus on high-value segments.
 
 ---
 
-## 🧠 Modeling Framework
+## 🟣 Revenue-at-Risk Intelligence
 
-* **BG/NBD** → Predict future purchase frequency
-* **Gamma-Gamma** → Predict expected transaction value
-* Combined to compute 6-month CLV
+Combines churn probability with CLV to quantify financial exposure.
 
----
+### Formula
+Revenue at Risk = Churn Probability × CLV (6 Months)
 
-## ⚙ Key Features
+### Key Highlights
+- ₹197K projected revenue at risk (~27.5%)
+- Identifies high-value customers at financial risk
+- Enables retention budget prioritization
 
-* Frequency
-* Recency
-* Customer age (T)
-* Monetary value
-* Expected purchases
-* Expected monetary value
+### Output
+- Executive dashboard linking risk with revenue impact
 
----
+![Revenue at Risk](customer-retention-intelligence/dashboard/screenshots/executive_view.png)
 
-## 📊 Deliverables
-
-* Power BI CLV dashboard
-* Customer segmentation (High / Medium / Low Value)
-* Deployed Streamlit web application
-
-![Actionable Customers](customer-lifetime-value-analysis/dashboards/screenshots/page2_high_value_deep_dive_rfm.png)
+### Insight
+Even moderate churn rates can create high financial impact if concentrated among high-value customers.
 
 ---
 
-## 📌 Insight
+## 🔗 System Integration
 
-A minority of customers contributes the majority of projected revenue, emphasizing the importance of value-based prioritization.
-
----
-
-# 🟣 Project 3 — Revenue-at-Risk Executive Dashboard (Integrated Layer)
-
-## 🔍 Business Objective
-
-Quantify projected revenue exposure by combining churn probability with forward-looking CLV.
+| Component             | Business Question Answered                  |
+|---------------------|--------------------------------------------|
+| Churn Model         | Who is likely to leave?                    |
+| CLV Model           | Who is valuable?                           |
+| Revenue-at-Risk     | Where is revenue exposed?                  |
 
 ---
 
-## 🧠 Integration Logic
+## 🛠 Tech Stack
 
-[
-Revenue\ at\ Risk = Churn\ Probability \times CLV_{6M}
-]
-
-This transforms behavioral risk into measurable financial exposure.
-
----
-
-## 📊 Executive Dashboard Highlights
-
-* Total Projected 6-Month CLV
-* Total Revenue at Risk
-* % Revenue Exposure
-* CLV vs Churn Risk distribution
-* Revenue exposure by value tier
-* Top customers by financial risk
-![Actionable Customers](customer-retention-intelligence/dashboard/screenshots/executive_view.png)
----
-
-## 📌 Strategic Insight
-
-A moderate overall churn rate can still create significant revenue exposure if concentrated among high-value customers.
-
-This dashboard enables:
-
-* Retention budget prioritization
-* Financial risk assessment
-* Executive-level decision support
+- Python (Pandas, NumPy, Scikit-learn) → Data processing & modeling
+- Lifetimes → CLV forecasting (BG/NBD, Gamma-Gamma)
+- Power BI → Business dashboards
+- Streamlit → Interactive applications
+- Git → Version control
 
 ---
 
-# 🔗 How the System Works Together
+## 🚀 Why This Project Matters
 
-| Component             | Answers                                      |
-| --------------------- | -------------------------------------------- |
-| Churn Model           | Who is likely to disengage?                  |
-| CLV Model             | Who generates the most future value?         |
-| Revenue-at-Risk Layer | Where is future revenue financially exposed? |
+This project demonstrates the ability to:
 
----
+- Translate data into financial impact
+- Move beyond prediction to decision-making
+- Build end-to-end analytics systems
+- Support real-world business strategy
 
-# 🛠 Tech Stack
-
-* Python (Pandas, NumPy, Scikit-learn)
-* Lifetimes (BG/NBD, Gamma-Gamma)
-* Power BI
-* Streamlit
-* Git & GitHub
+This is not just a model — it is a **decision-support system**.
 
 ---
 
-# 🚀 Why This Portfolio Matters
+## 📌 Future Enhancements
 
-This repository demonstrates:
-
-* End-to-end analytics pipeline
-* Behavioral feature engineering
-* Predictive modeling
-* Probabilistic revenue forecasting
-* Financial exposure quantification
-* Executive dashboard development
-* Deployment capability
-
-It mirrors real-world customer analytics workflows in e-commerce environments.
+- Revenue uplift modeling
+- Churn probability calibration
+- Automated retention scoring pipeline
+- Campaign impact simulation
 
 ---
 
-# 📌 Future Enhancements
+## 👤 Author
 
-* Revenue uplift modeling
-* Churn probability calibration
-* Automated retention scoring pipeline
-* Campaign impact simulation
-
----
-
-# 👤 Author
-
-Sampath
-Aspiring Data Scientist
-Customer Analytics | Churn Modeling | CLV Forecasting | Retention Intelligence
-
----
+Sampath  
+Data Analyst | Customer Analytics | Revenue Intelligence
