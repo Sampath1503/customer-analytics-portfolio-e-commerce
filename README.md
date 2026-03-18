@@ -77,6 +77,7 @@ Power BI dashboard including:
 Churn risk is concentrated within a limited customer subset, enabling targeted and cost-effective retention intervention.
 
 ---
+![Actionable Customers](customer-churn-risk-analysis/dashboard/screenshots/page2_risk_distribution.png)
 
 # 🟢 Project 2 — Customer Lifetime Value (6-Month CLV)
 
