@@ -111,7 +111,8 @@ Forecast forward-looking customer revenue to prioritize high-impact accounts and
 * Power BI CLV dashboard
 * Customer segmentation (High / Medium / Low Value)
 * Deployed Streamlit web application
-![Actionable Customers](customer-lifetime-value-analysis/dashboard/screenshots/page2_high_value_deep_dive_rfm.png)
+
+![Actionable Customers](customer-lifetime-value-analysis/dashboards/screenshots/page2_high_value_deep_dive_rfm.png)
 
 ---
 
