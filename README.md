@@ -23,6 +23,7 @@ This project answers that by combining:
 ---
 
 ## 🏗 System Architecture
+
 customer-analytics-portfolio/
 │
 ├── customer-churn-risk-analysis/
